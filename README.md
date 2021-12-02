@@ -1,6 +1,6 @@
 # 🎄My Repo for Advent of Code 2021🎄
 
-For this years [AoC](https://adventofcode.com/) challenge I'm going to use Python as my language of choice.
+For this years [AoC](https://adventofcode.com/) challenge I'm going to use **Python** as my language of choice.
 
 ```
       __,_,_,___)          _______
