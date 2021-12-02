@@ -2,7 +2,7 @@
 
 For this years [AoC](https://adventofcode.com/) challenge I'm going to use Python as my language of choice.
 
-* Season's Greetings * 11/96
+
       __,_,_,___)          _______
     (--| | |             (--/    ),_)        ,_)
        | | |  _ ,_,_        |     |_ ,_ ' , _|_,_,_, _  ,
@@ -30,7 +30,8 @@ For this years [AoC](https://adventofcode.com/) challenge I'm going to use Pytho
   """"|'.'.'.|~~|.*.*.*|     ____|_   =('.')=//   ,------------.
   jgs |'.'.'.|   ^^^^^^|____|>>>>>>|  ( ~~~ )/   (((((((())))))))
       ~~~~~~~~         '""""`------'  `w---w`     `------------'
-      
+
+
 This ASCII pic can be found at
 https://asciiart.website/index.php?art=holiday/christmas/trees
 
