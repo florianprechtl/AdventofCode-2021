@@ -1,40 +1,17 @@
 import os
+from ...util.bingoPrinter import print_bingo_field
 
-__location__ = os.path.realpath(
+def readInput(part_path):
+    __location__ = os.path.realpath(
     os.path.join(os.getcwd(), os.path.dirname(__file__)))
+    f = open(os.path.join(__location__, part_path), 'r')
+    return f
 
-f = open(os.path.join(__location__, '../input.txt'), 'r')
+def readLines(input):
+    return [line.strip() for line in input]
 
-class bcolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKCYAN = '\033[96m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-
-def printBingoField(bingoField):
-    for y in range(len(bingoField)):
-        for x in range(len(bingoField[0])):
-            if (bingoField[y][x] in calledNumbers):
-                print(f"{bcolors.WARNING}{str(bingoField[y][x]).ljust(2)}{bcolors.ENDC}", end='')
-            else:
-                print(str(bingoField[y][x]).ljust(2), end='')
-            
-            if (x != (len(bingoField[0]) - 1)):
-                print(" ", end='')
-        print("") 
-    print("")
-
-text = f.read()
-text = text.replace("  ", " ")
-text = text.replace("  ", " ")
-lines = text.split("\n")
-lines = [line.strip() for line in lines]
-
+input = readInput('../input.txt')
+lines = readLines(input)
 
 allNumbers = [int(number) for number in lines[0].split(",")]
 allBingoFields = []
@@ -50,7 +27,7 @@ while (currentIndex < len(lines)):
     bingoFieldAsLines = lines[currentIndex:currentIndex+5:1]
     bingoField = []
     for i in range(len(bingoFieldAsLines)):
-        numbers = bingoFieldAsLines[i].split(" ")
+        numbers = bingoFieldAsLines[i].split()
         numbers = [int(num) for num in numbers]
         bingoField.append(numbers)
     bingoIndex += 1
@@ -66,7 +43,7 @@ for number in allNumbers:
     for index, bingoField in enumerate(allBingoFields):
         if (index in foundbingoFieldIndices):
             continue
-        printBingoField(bingoField)
+        print_bingo_field(bingoField, calledNumbers)
         currentBingoIndex = index
         # search rows
         for y in range(len(bingoField)):
